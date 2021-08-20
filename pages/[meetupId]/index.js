@@ -18,14 +18,8 @@ export async function getStaticPaths() {
     return collection.find({}, { _id: 1 }).toArray();
   });
 
-  console.log(meetups);
-
-  // const pathIdArray =
-
-  // console.log(pathIdArray);
-
   return {
-    fallback: false,
+    fallback: "blocking",
     paths: meetups.map((meetup) => {
       return {
         params: {
